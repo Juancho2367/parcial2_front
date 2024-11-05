@@ -45,38 +45,34 @@ function Forms({ callback }) {
 
     return (
         <div className="login-container">
-            <h2 className="login-title">¡Participa en el Sorteo de Margarita!</h2>
-            <p className="login-subtitle">Inicia sesión para una oportunidad de ganar</p>
-            {error && <div className="error-message">{error}</div>}
-            {success && <div className="success-message">{success}</div>}
-            <div className="form-group">
-                <label htmlFor="username">
-                    <span className="icon">👤</span> Usuario
-                </label>
-                <input
-                    type="text"
-                    id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Ingresa tu usuario"
-                    required // Agrega required para mejor validación
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="password">
-                    <span className="icon">🔒</span> Contraseña
-                </label>
-                <input
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Ingresa tu contraseña"
-                    required // Agrega required para mejor validación
-                />
-            </div>
-            <button className="login-button" onClick={handleLogin}>Entrar</button>
-            <Link to="/registro" className="register-button">Registrarse</Link>
+            <h2 className="login-title">Iniciar Sesión</h2>
+            <p className="login-subtitle">Bienvenido, por favor ingresa tus datos</p>
+            <form onSubmit={handleLogin}>
+                <div className="form-group">
+                    <label htmlFor="username">Nombre de Usuario</label>
+                    <input
+                        type="text"
+                        id="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Usuario"
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Contraseña"
+                    />
+                </div>
+                <button type="submit" className="login-button">Iniciar Sesión</button>
+                <button type="button" className="register-button">Registrarse</button>
+            </form>
+            {errorMessage && <div className="error-message">{errorMessage}</div>}
+            {successMessage && <div className="success-message">{successMessage}</div>}
         </div>
     );
 }

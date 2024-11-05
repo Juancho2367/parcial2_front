@@ -1,153 +1,138 @@
-/* Contenedor principal */
+/* Fondo general de la página */
 html, body {
   height: 100%;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e0f7e9; /* Fondo claro verde */
+  background-color: #f0f4f8; /* Fondo claro */
+  font-family: Arial, sans-serif;
 }
 
+/* Contenedor principal del formulario */
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
+  background-color: #ffffff;
+  padding: 30px 40px;
   max-width: 400px;
   width: 100%;
-  height: auto;
-  background-color: rgba(0, 100, 0, 0.85); /* Fondo verde oscuro semitransparente */
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: #ffffff; /* Texto blanco */
 }
 
-/* Título y subtítulo */
+/* Estilos para el título y subtítulo */
 .login-title {
   font-size: 24px;
   font-weight: bold;
-  color: #a5d6a7; /* Verde claro */
+  color: #333333;
   margin-bottom: 10px;
 }
 
 .login-subtitle {
   font-size: 16px;
-  color: #c8e6c9; /* Verde aún más claro */
+  color: #666666;
   margin-bottom: 20px;
 }
 
 /* Grupo de formularios */
 .form-group {
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .form-group label {
   font-size: 14px;
-  color: #c8e6c9; /* Verde claro */
-  display: flex;
-  align-items: center;
-}
-
-.form-group .icon {
-  margin-right: 8px;
-  color: #66bb6a; /* Verde medio */
+  color: #333333;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px;
-  border: 2px solid #66bb6a; /* Borde verde medio */
-  border-radius: 8px;
-  outline: none;
-  background-color: #ffffff; /* Fondo blanco */
-  color: #333;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333333;
+  background-color: #f9f9f9;
   transition: border-color 0.3s;
 }
 
 .form-group input:focus {
-  border-color: #388e3c; /* Verde más oscuro al hacer foco */
+  border-color: #1a73e8; /* Color azul al hacer foco */
 }
 
-/* Botones */
-.login-button,
-.register-button {
+/* Botones de acción */
+.login-button {
   width: 100%;
-  padding: 12px;
-  margin-top: 12px;
+  padding: 12px 0;
+  background-color: #1a73e8; /* Azul */
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
+  color: #ffffff;
   cursor: pointer;
+  margin-top: 15px;
   transition: background-color 0.3s;
-  color: white;
-}
-
-.login-button {
-  background-color: #388e3c; /* Verde oscuro */
 }
 
 .login-button:hover {
-  background-color: #2e7d32; /* Verde más oscuro */
+  background-color: #155bb5;
 }
 
 .register-button {
-  background-color: #66bb6a; /* Verde medio */
-  color: #333;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #e0e0e0; /* Gris */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .register-button:hover {
-  background-color: #57a05a; /* Verde medio más oscuro */
+  background-color: #bdbdbd;
 }
 
-/* Mensajes de éxito y error */
+/* Mensajes de error y éxito */
 .error-message,
 .success-message {
-  margin-top: 10px;
+  margin-top: 20px;
+  padding: 10px;
   font-size: 14px;
-  padding: 8px;
-  border-radius: 4px;
+  border-radius: 5px;
   width: 100%;
-  color: white;
 }
 
 .error-message {
-  background-color: #e57373; /* Rojo claro */
+  background-color: #f44336; /* Rojo */
+  color: #ffffff;
 }
 
 .success-message {
-  background-color: #81c784; /* Verde claro */
+  background-color: #4caf50; /* Verde */
+  color: #ffffff;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .login-title {
-      font-size: 22px;
-  }
-  .form-group input {
-      padding: 10px;
-  }
-  .login-button,
-  .register-button {
-      padding: 10px;
-  }
-}
-
+/* Media Queries para dispositivos móviles */
 @media (max-width: 480px) {
+  .login-container {
+      padding: 20px;
+  }
   .login-title {
       font-size: 20px;
   }
-  .login-subtitle {
-      font-size: 14px;
-  }
   .form-group input {
-      padding: 8px;
+      padding: 10px;
   }
   .login-button,
   .register-button {
-      padding: 8px;
+      padding: 10px;
   }
 }
