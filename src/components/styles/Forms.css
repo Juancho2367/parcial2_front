@@ -20,7 +20,7 @@
 }
 
 /* Estilo para el subtítulo */
-.login-subtitle {
+.login-here {
   font-size: 14px;
   color: #666;
   margin-bottom: 30px;
@@ -28,8 +28,13 @@
 }
 
 /* Estilo para el formulario */
-form {
+.login-form {
   width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo para los grupos de formulario */
