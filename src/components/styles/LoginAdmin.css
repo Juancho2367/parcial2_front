@@ -57,20 +57,20 @@ button:focus {
 
 /* Botón Ingresar */
 button:first-of-type {
-    background-color: #4CAF50;
+    background-color: #751818;
     color: white;
 }
 
 /* Botón Añadir Admin */
 button:last-of-type {
-    background-color: #2196F3;
+    background-color: #a72a35;
     color: white;
     margin-top: 8px;
 }
 .register-button {
     width: 100%;
     padding: 10px;
-    background-color: #008CBA; /* Color diferente para el botón de registro */
+    background-color: #9e152798; /* Color diferente para el botón de registro */
     color: white;
     border: none;
     border-radius: 4px;

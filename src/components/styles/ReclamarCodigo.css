@@ -1,19 +1,24 @@
+/* Contenedor principal para la sección de reclamación */
 .reclamar-container {
     max-width: 400px;
     margin: auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-    background: #ffffff; /* Fondo blanco para mayor claridad */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    background-color: var(--background-light); /* Fondo usando variable de color */
+    color: var(--text-light); /* Color de texto */
 }
 
+/* Título de la sección de reclamación */
 .reclamar-title {
     text-align: center;
-    color: #333;
-    font-size: 1.5em; /* Aumentar el tamaño de la fuente */
-    margin-bottom: 20px; /* Separar del formulario */
+    color: var(--primary-color); /* Usar color primario */
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
+/* Grupos de formulario */
 .form-group {
     margin-bottom: 15px;
 }
@@ -21,86 +26,123 @@
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
-    color: #555; /* Color más suave para la etiqueta */
+    font-weight: 500;
+    color: #555;
 }
 
+/* Estilos para los inputs */
 .form-group input {
     width: 100%;
-    padding: 12px; /* Mayor padding para comodidad */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s ease; /* Transición en el borde */
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 14px;
+    color: var(--text-light);
+    background-color: transparent;
 }
 
 .form-group input:focus {
-    border-color: #28a745; /* Color de borde al enfocar */
-    outline: none; /* Eliminar el outline por defecto */
+    border-color: var(--secondary-color); /* Borde secundario en foco */
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.4);
+    outline: none;
 }
 
+/* Botón de reclamación */
 .reclamar-button {
     width: 100%;
-    padding: 12px; /* Mayor padding para el botón */
-    background-color: #28a745; /* Color verde para el botón */
+    padding: 12px;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Agregar transformación */
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .reclamar-button:disabled {
-    background-color: #6c757d; /* Color gris cuando está deshabilitado */
+    background-color: #6c757d; /* Gris cuando está deshabilitado */
 }
 
 .reclamar-button:hover:not(:disabled) {
-    background-color: #218838; /* Color más oscuro en hover */
-    transform: scale(1.02); /* Efecto de aumento en hover */
+    background-color: var(--secondary-color);
+    transform: scale(1.02); /* Aumento ligero en hover */
 }
 
+/* Mensajes de éxito y error */
 .mensaje-exito {
-    color: #28a745; /* Verde para mensajes de éxito */
+    color: #28a745; /* Verde para éxito */
     text-align: center;
-    margin-top: 15px; /* Separar del formulario */
-    font-weight: bold; /* Negrita para destacar */
+    margin-top: 15px;
+    font-weight: bold;
 }
 
 .mensaje-error {
-    color: #dc3545; /* Rojo para mensajes de error */
+    color: #dc3545; /* Rojo para error */
     text-align: center;
-    margin-top: 15px; /* Separar del formulario */
-    font-weight: bold; /* Negrita para destacar */
+    margin-top: 15px;
+    font-weight: bold;
 }
 
+/* Indicador de carga */
 .loader {
     text-align: center;
     margin-top: 10px;
     font-size: 20px;
+    color: var(--secondary-color);
 }
 
+/* Contenedor del historial */
 .historial-container {
-    margin-top: 20px; /* Separar del formulario */
-    padding: 10px;
+    margin-top: 20px;
+    padding: 15px;
     border-radius: 8px;
-    background: #f0f0f0; /* Fondo claro para el historial */
+    background-color: rgba(240, 240, 240, 0.9);
+    color: #333;
 }
 
 .historial-container h3 {
     text-align: center;
-    color: #333;
+    color: var(--primary-color);
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .historial-container ul {
-    list-style-type: none; /* Eliminar los puntos de la lista */
-    padding: 0; /* Eliminar el padding */
+    list-style-type: none;
+    padding: 0;
 }
 
 .historial-container li {
     padding: 8px;
-    border-bottom: 1px solid #ccc; /* Línea entre los ítems */
-    color: #555; /* Color de texto más suave */
+    border-bottom: 1px solid #ccc;
+    color: #555;
 }
 
 .historial-container li:last-child {
-    border-bottom: none; /* Eliminar la línea del último ítem */
+    border-bottom: none;
+}
+
+/* Modo Claro */
+@media (prefers-color-scheme: light) {
+    .reclamar-container, .historial-container {
+        background-color: var(--background-light);
+        color: var(--text-light);
+    }
+
+    .form-group input {
+        color: var(--text-dark);
+        background-color: rgba(240, 240, 240, 0.8);
+    }
+
+    .reclamar-button {
+        background-color: var(--primary-color);
+    }
+
+    .reclamar-button:hover:not(:disabled) {
+        background-color: var(--secondary-color);
+    }
 }
