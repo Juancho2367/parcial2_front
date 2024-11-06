@@ -61,14 +61,14 @@ function Registro() {
 
     } catch (error) {
       console.error("Error:", error);
-      setMensaje(error.message || "❌ Error en el registro, intenta de nuevo ❌");
+      setMensaje(error.message || " Error en el registro, intenta de nuevo ");
       setTipoMensaje('error');
     }
   };
 
   return (
     <div className="registro-container">
-      <h2 className="registro-title">🤑🤑 REGÍSTRATE Y GANA 🤑🤑</h2>
+      <h2 className="registro-title"> REGÍSTRATE Y GANA </h2>
       <form onSubmit={handleRegister} className="registro-form">
         <div className="form-group">
           <label htmlFor="nombre">Nombre</label>

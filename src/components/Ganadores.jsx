@@ -38,7 +38,7 @@ const Ganadores = () => {
 
     return (
         <div className="ganadores-container">
-            <h2>🏆 Ganadores de Premios 🏆</h2>
+            <h2> Ganadores de Premios </h2>
             {cargando ? (
                 <div className="loader">🔄 Cargando...</div>
             ) : (

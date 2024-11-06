@@ -13,7 +13,7 @@ const ReclamarCodigo = ({ userId }) => {
         event.preventDefault(); // Evitar que el formulario se recargue
 
         if (!userId) {
-            setMensaje("❌ Debes estar autenticado para reclamar el código ❌");
+            setMensaje(" Debes estar autenticado para reclamar el código ");
             return;
         }
 
@@ -32,7 +32,7 @@ const ReclamarCodigo = ({ userId }) => {
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.message || '❌ Error en el reclamo, intenta de nuevo ❌');
+                throw new Error(data.message || ' Error en el reclamo, intenta de nuevo ');
             }
 
             setMensaje(data.message);
@@ -62,7 +62,7 @@ const ReclamarCodigo = ({ userId }) => {
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.message || '❌ Error al obtener el historial ❌');
+                throw new Error(data.message || ' Error al obtener el historial ');
             }
 
             setHistorial(data.historial);
@@ -81,7 +81,7 @@ const ReclamarCodigo = ({ userId }) => {
 
     return (
         <div className="reclamar-container">
-            <h2 className="reclamar-title">🎉 Reclama tu Código 🎉</h2>
+            <h2 className="reclamar-title"> Reclama tu Código </h2>
             <form onSubmit={handleReclamar}>
                 <div className="form-group">
                     <label htmlFor="codigo">Código</label>
@@ -103,7 +103,7 @@ const ReclamarCodigo = ({ userId }) => {
                     </p>
                 )}
             </form>
-            {cargando && <div className="loader">🔄 Cargando...</div>}
+            {cargando && <div className="loader"> Cargando...</div>}
 
             {/* Sección para mostrar el historial de reclamos */}
             <div className="historial-container">
